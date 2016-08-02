@@ -6,7 +6,12 @@ class BlogPostsController < ApplicationController
   def index
     @blog_posts = BlogPost.all
   end
-
+  def user_posts
+    @user = User.find(params[:id])
+    #in the link to this page we'll pass the user's ID #, the use associaton to bring up their blog posts
+  end
+  def your_posts
+  end
   # GET /blog_posts/1
   # GET /blog_posts/1.json
   def show

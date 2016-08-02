@@ -9,8 +9,8 @@
   <%= link_to blog_post.title, blog_post %>
   </div>
   <div class="panel panel-body">
-    by <%= blog_post.user.email %><br />
-    <p><span class="posted-at">posted at: <%= blog_post.created_at.strftime('%m/%d/%Y at %I:%M%p' ) %></span></p>
+    by <strong><%= link_to blog_post.user.name, user_posts_path(id: blog_post.user.id) %></strong>
+    <span class="posted-at"><%= blog_post.created_at.strftime('%m/%d/%Y at %I:%M%p' ) %></span></p>
   <p><%= truncate(blog_post.blog_entry, length: 250, seperator: ' ') %></p>
   <%= link_to "Read More About #{blog_post.title.titleize}", blog_post %>
   </div>
